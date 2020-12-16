@@ -26,12 +26,15 @@ DATABASE_SCHEMA = "database_schema"
 TABLES_DETAILS_DOMAIN = "db_tables"
 # -- First Table - ##
 COVER_TABLE_NAME_KEY = "unique_tracks_table"
+COVER_ID_COLUMN_NAME_KEY = "cover_id"
 COVER_SONG_ID_COLUMN_NAME_KEY = "cover_song_id"
 COVER_ARTIST_NAME_COLUMN_NAME_KEY = "cover_artist_name"
 COVER_TITLE_NAME_COLUMN_NAME_KEY = "cover_song_title"
 # -- Second Table --#
 PLAYLIST_HISTORY_TABLE_NAME_KEY = "triplets_sample_table"
+PLAYLIST_HISTORY_USER_ID_NAME_KEY = "playlist_history_user_id"
 PLAYLIST_HISTORY_SONG_ID_COLUMN_NAME_KEY = "playlist_history_song_id"
+PLAYLIST_HISTORY_DATE_COLUMN_NAME_KEY = "playlist_history_date"
 
 # -- DATABASE QUERIES -- #
 INSERT_INTO = "INSERT INTO {0} VALUES({1})"
@@ -49,3 +52,8 @@ SELECT TOP {0} covers.{2}, COUNT(*) FROM {1}.{3} covers
 LEFT JOIN {1}.{4} history ON covers.{5} = history.{6}
 GROUP BY covers.{2} ORDER BY COUNT(*) DESC
 """
+
+CREATE_TABLE = "CREATE TABLE {}.{}({})"
+COLUMN = "{} {}"
+
+STANDARD_VARCHAR_COLUMN = "{} nvarchar(500)"
